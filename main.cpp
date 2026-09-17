@@ -70,10 +70,6 @@ int main() {
     // Enable vertex attribute 0
     glEnableVertexAttribArray(0);
 
-    // ------------------------------------------------------------
-    // 8. Vertex shader
-    // ------------------------------------------------------------
-
     const char* vertexShaderSource = R"(
         #version 330 core
 
@@ -95,10 +91,6 @@ int main() {
     );
 
     glCompileShader(vertexShader);
-
-    // ------------------------------------------------------------
-    // 9. Fragment shader
-    // ------------------------------------------------------------
 
     const char* fragmentShaderSource = R"(
         #version 330 core
@@ -123,10 +115,6 @@ int main() {
 
     glCompileShader(fragmentShader);
 
-    // ------------------------------------------------------------
-    // 10. Link shaders into a shader program
-    // ------------------------------------------------------------
-
     unsigned int shaderProgram =
         glCreateProgram();
 
@@ -138,10 +126,6 @@ int main() {
     // Shaders are now inside the program.
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
-
-    // ------------------------------------------------------------
-    // 11. Main loop
-    // ------------------------------------------------------------
 
     while (!glfwWindowShouldClose(window))
     {
@@ -164,10 +148,6 @@ int main() {
         // Process keyboard/window events
         glfwPollEvents();
     }
-
-    // ------------------------------------------------------------
-    // 12. Cleanup
-    // ------------------------------------------------------------
 
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
