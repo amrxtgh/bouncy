@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
-g++ main.cpp glad-build/src/gl.c -Iglad-build/include -lglfw -lGL -ldl -o bouncy
+g++ -std=c++23 main.cpp glad-build/src/gl.c -Iglad-build/include -lglfw -lGL -ldl -o bouncy
 ./bouncy

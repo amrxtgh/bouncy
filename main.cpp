@@ -1,6 +1,7 @@
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <print>
 
 int main() {
 	if (!glfwInit()) {
@@ -21,7 +22,7 @@ int main() {
 
 	glfwMakeContextCurrent(window);
 	if (!gladLoadGL(glfwGetProcAddress)) {
-		std::cerr << "Failed to load OpenGL\n";
+		std::print(stderr, "Opengl is not loaded\n");
 		glfwDestroyWindow(window);
 		glfwTerminate();
 		return 1;
